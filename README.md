@@ -39,3 +39,23 @@ docker run --rm -v $(pwd):/mnt netmarkjp/mkdocs-wkhtmltopdf
 ```
 
 => `draft-html.zip` `draft.pdf` will generate.
+
+# in GitLab CI
+
+example of .gitlab-ci.yml is below.
+
+```yaml
+stages:
+  - release
+release:
+  stage: release
+  tags:
+    - docker
+  image: netmarkjp/mkdocs-wkhtmltopdf:latest
+  script:
+    - ./build.sh
+  artifacts:
+    paths:
+      - draft.pdf
+      - draft-html.zip
+```
