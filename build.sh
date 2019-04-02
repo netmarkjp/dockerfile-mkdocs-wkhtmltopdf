@@ -25,7 +25,10 @@ xvfb-run wkhtmltopdf \
     toc \
     ${BUILD_ROOT:?}/index.html \
     ${INDEXES:?} \
-    ${OUTPUT_ROOT:?}/draft.pdf
+    /tmp/draft.pdf
 
-rm -f draft-html.zip || :
-zip -9r ${OUTPUT_ROOT:?}/draft-html.zip ${BUILD_ROOT:?}
+cp -a /tmp/draft.pdf ${OUTPUT_ROOT:?}/. || :
+
+rm -f /tmp/draft-html.zip || :
+zip -9r /tmp/draft-html.zip ${BUILD_ROOT:?}
+cp -a /tmp/draft-html.zip ${OUTPUT_ROOT:?}/. || :
