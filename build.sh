@@ -20,8 +20,11 @@ xvfb-run wkhtmltopdf \
     --enable-internal-links \
     --load-error-handling ignore \
     --disable-smart-shrinking \
-    --header-left "[webpage]:${VERSION}" \
+    --footer-line \
+    --footer-left "[webpage]:${VERSION}" \
     --footer-right "[page]/[topage]" \
+    --footer-font-size ${FOOTER_FONT_SIZE:-9} \
+    --zoom ${ZOOM:-1.0} \
     toc \
     ${BUILD_ROOT:?}/index.html \
     ${INDEXES:?} \
