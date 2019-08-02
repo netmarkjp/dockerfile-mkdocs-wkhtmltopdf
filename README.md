@@ -24,6 +24,30 @@ body {
     font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
 }
 ```
+
+Example: When compact style is suitable.
+
+```css
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+    font-family: "Noto Sans Japanese", "Noto Sans CJK JP", "Noto Sans", sans-serif;
+}
+p {
+    font-size: small;
+    text-indent: 1em;
+}
+.md-typeset p {
+    font-size: small;
+    margin-top: 0.25em;
+    margin-bottom: 0em;
+}
+.md-typeset ol li, .md-typeset ul li {
+    font-size: small;
+    margin-bottom: 0.25em;
+    line-height: 1.25em;
+}
+```
+
 # Usage
 
 ## serve
