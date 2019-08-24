@@ -15,6 +15,7 @@ mkdocs build --clean -d ${BUILD_ROOT:?}
 INDEXES=$(ls ${BUILD_ROOT:?}/*/index.html | sort -n)
 
 xvfb-run wkhtmltopdf \
+    --javascript-delay 5000 \
     --window-status ready \
     --print-media-type \
     --enable-internal-links \
